@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #ff4e2b;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.container .imgBx {
+  position: relative;
+  width: 450px;
+  height: 100%;
+  background: url(./newyear.jpg);
+  background-size: cover;
+}
+.container .countdownBx {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  width: calc(100% - 450px);
+}
+.container .countdownBx h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 500;
+  line-height: 4em;
+}
+.container .countdownBx h2 span {
+  font-size: 6em;
+  font-weight: 700;
+}
+.container .countdownBx h2 span i {
+  font-style: initial;
+  color: #ff0;
+}
+.container .countdownBx .countdown {
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .countdownBx .countdown div {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 500;
+  margin: 0 15px;
+  margin-top: -25px;
+}
+.container .countdownBx .countdown div::before {
+  content: "text";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  color: #fff;
+  font-size: 0.35em;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.container .countdownBx .countdown div#day::before {
+  content: "Days";
+}
+.container .countdownBx .countdown div#hour::before {
+  content: "Hours";
+}
+.container .countdownBx .countdown div#minute::before {
+  content: "Minutes";
+}
+.container .countdownBx .countdown div#second::before {
+  content: "Seconds";
+}
+.container .countdownBx .countdown div#second,
+.container .countdownBx .countdown div#second::before {
+  color: #ff0;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 991px) {
+  .container .imgBx {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .container .countdownBx {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .container .countdownBx h2 {
+    font-size: 1.1em;
+  }
+  .container .countdownBx .countdown {
+    height: 100px;
+  }
+  .container .countdownBx .countdown div {
+    width: 80px;
+    font-size: 2em;
+    margin: 0;
+    margin-top: -25px;
   }
 }
